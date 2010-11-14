@@ -1,0 +1,48 @@
+= form_for @patient do |f|
+  =f.error_messages
+  %fieldset
+    %legend
+      Information
+    #form_left
+      %p
+        = f.label :last_name
+        %br
+        = f.text_field :last_name
+      %p
+        = f.label :middle_name
+        %br
+        = f.text_field :middle_name
+      %p
+        = f.label :dob, "Date of Birth"
+        %br
+        = f.date_select :dob, {:use_month_numbers => true, :start_year => Time.now.year - 120, :order => [:month, :day, :year]}
+      %p
+        = f.label :attending, "Attending Physician"
+        %br
+        = f.text_field :attending
+      %p
+        = f.label :insurance, "Insurance Provider"
+        %br
+        = f.text_field :insurance
+    #form_right
+      %p
+        = f.label :first_name
+        %br
+        = f.text_field :first_name
+      %p
+        = f.label :ssn, "SSN"
+        %br
+        = f.number_field :ssn
+      %p
+        = f.label :sex
+        %br
+        = f.select :sex, Patient::SEX
+      %p
+        = f.label :primary, "Primary Care Physician"
+        %br
+        = f.text_field :primary
+    .clear
+  %p
+    = f.submit
+    or
+    %a.cancel_link{ :href => patients_path } Cancel

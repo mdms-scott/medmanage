@@ -1,0 +1,12 @@
+%h3
+ = "Viewing Patient #{@patient.first_name}'s Information"
+
+#patient_info_container
+ = render :partial => '/patients/info/patient_info'
+#patient_allergies
+
+#patient_medications_container
+
+#drug_interactions
+
+= link_to "Back to Patients Index", patients_path

@@ -1,0 +1,5 @@
+= link_to "#{patient.last_name}", patient_path(patient)
+%br
+= link_to "Edit", edit_patient_path(patient)
+= "/"
+= link_to "Delete", patient_path(patient), :method => 'delete', :confirm => "Are you sure you want to delete #{patient.first_name}'s records?"

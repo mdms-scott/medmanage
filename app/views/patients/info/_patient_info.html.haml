@@ -1,0 +1,28 @@
+%ul.patient_info
+  %li
+    Name:  
+    = @patient.first_name
+    = " "
+    = @patient.middle_name
+    =" "
+    = @patient.last_name
+  %li
+    SSN:  
+    = @patient.ssn
+  %li
+    Date of Birth:  
+    = @patient.dob.strftime('%B %d, %Y')
+  %li
+    Sex:  
+    = @patient.sex
+  %li
+    Insurance Provider:  
+    = @patient.insurance
+  %li
+    Primary Care Physician:  
+    = @patient.primary
+  %li
+    Current Attending Physician:  
+    = @patient.attending
+%p
+  = link_to "Edit this patient's information", edit_patient_path(@patient)
