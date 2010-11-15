@@ -10,4 +10,9 @@ class Drug < ActiveRecord::Base
     self.interactions = ['']
   end
   
+  def self.types
+    @types = TYPES
+    @types
+  end
+  
 end

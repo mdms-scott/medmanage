@@ -1,0 +1,11 @@
+= form_tag manage_interactions_update_path(@drug), :method => :post do  
+  %fieldset
+    %legend
+      Drug Interactions
+    - Drug::TYPES.each do |type|
+      %p
+        = type
+        %br
+        = check_box_tag "drug[interactions][]", type, @drug.interactions.include?(type)
+    %p
+      = submit_tag

@@ -21,7 +21,7 @@ class DrugsController < ApplicationController
     @drug = Drug.new(params[:drug])
     if @drug.save
       flash[:notice] = "Successfully created drug record."
-      respond_with @drug, :location => drugs_path
+      respond_with @drug
     else
       flash[:alert] = "Failed to create drug record."
       render :action => :new
@@ -49,6 +49,18 @@ class DrugsController < ApplicationController
   
   def manage_interactions
     
+  end
+  
+  def manage_interactions_update
+    params[:drug] ||= {"interactions"=>[""]}
+    puts params[:drug]
+    if @drug.update_attributes(params[:drug])
+      flash[:notice] = "Successfully modified interactions."
+      respond_with @drug
+    else
+      flash[:alert] = "Failed to modify interactions."
+      render :action => :manage_interactions
+    end
   end
   
   private
