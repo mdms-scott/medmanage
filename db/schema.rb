@@ -10,12 +10,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101114213617) do
+ActiveRecord::Schema.define(:version => 20101115054403) do
 
   create_table "allergies", :force => true do |t|
     t.string   "name"
     t.string   "kind"
     t.integer  "patient_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "drugs", :force => true do |t|
+    t.string   "name"
+    t.string   "kind"
+    t.string   "code"
+    t.string   "purpose"
+    t.text     "interactions"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
