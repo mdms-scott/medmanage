@@ -1,0 +1,17 @@
+%table
+  %tr
+    %th
+      Allergy
+    %th
+      Classification
+    %th
+  - @patient.allergies.each do |allergy|
+    %tr
+      %td
+        = allergy.name
+      %td
+        = allergy.kind
+      %td
+        = link_to "Delete", allergy_path(allergy), :method => 'delete', :confirm => "Are you sure you want to delete this allergy?"
+
+= link_to "Add a new allergy", new_allergy_path(:patient_id => @patient.id)

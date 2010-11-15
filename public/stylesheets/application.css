@@ -24,3 +24,12 @@ ul.patient_info {
   list-style: none;
   margin: 0px;
   padding: 0px; }
+
+/* STYLES FOR PATIENT ALLERGIES */
+#patient_allergies {
+  border: 1px solid black;
+  margin: 30px 0 30px 10px; }
+  #patient_allergies table {
+    border: 1px solid black; }
+    #patient_allergies table td, #patient_allergies table th {
+      border: 1px solid black; }

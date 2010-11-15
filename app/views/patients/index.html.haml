@@ -1,7 +1,8 @@
 %h3
   Patients Index
 
-= render :partial => 'patient', :collection => @patients
+%ul
+  = render :partial => 'patient', :collection => @patients
 
 %p
   = link_to "Create a New Patient Record", new_patient_path

@@ -1,0 +1,18 @@
+= form_for @allergy do |f|
+  = f.error_messages
+  %fieldset
+    %legend
+      Information
+    %p
+      = f.label :name
+      %br
+      = f.text_field :name
+    %p
+      = f.label :kind
+      %br
+      =f.select :kind, Allergy::TYPES
+    = f.hidden_field :patient_id
+  %p
+    = f.submit
+    = "/"
+    %a.cancel_link{ :href => patient_path(Patient.find(params[:patient_id])) } Cancel
