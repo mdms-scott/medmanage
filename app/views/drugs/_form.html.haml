@@ -1,0 +1,29 @@
+= form_for @drug do |f|
+  = f.error_messages
+  %fieldset
+    %legend
+      Information
+    %p
+      = f.label :name
+      %br
+      = f.text_field :name
+    %p
+      = f.label :kind, "Classification"
+      %br
+      = f.select :kind, Drug::TYPES
+    %p
+      = f.label :code
+      %br
+      = f.text_field :code
+    %p
+      = f.label :generic_for
+      %br
+      = f.text_field :generic_for
+    %p
+      = f.label :purpose
+      %br
+      = f.text_field :purpose
+  %p
+    = f.submit
+    or
+    %a.cancel_link{ :href => drugs_path } Cancel

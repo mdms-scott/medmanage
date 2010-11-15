@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20101115054403) do
     t.string   "name"
     t.string   "kind"
     t.string   "code"
+    t.string   "generic_for"
     t.string   "purpose"
     t.text     "interactions"
     t.datetime "created_at"

@@ -1,0 +1,25 @@
+%ul.drug_info
+  %li
+    = "Name:  #{@drug.name}"
+  %li
+    = "Code:  #{@drug.code}"
+  %li
+    = "Classification:  #{@drug.kind}"
+  %li
+    = "Generic for:  #{@drug.generic_for}"
+  %li
+    = "Purpose:  #{@drug.purpose}"
+  %li
+    Interactions:
+    %ul
+      - @drug.interactions.each do |interaction|
+        %li
+        = interaction
+%p
+  = link_to "Manage this drug's interactions", manage_interactions_path(@drug), :method => :post
+%p
+  = link_to "Edit this drug's information", edit_drug_path(@drug)
+  %br
+  = link_to "Delete this drug from the database", drug_path(@drug), :method => 'delete', :confirm => "Are you sure you want to delete #{@drug.name} from the database?"
+  %br
+  = link_to "Back", drugs_path

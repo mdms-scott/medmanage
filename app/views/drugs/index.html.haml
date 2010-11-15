@@ -1,0 +1,10 @@
+%h3
+  Drugs Index
+
+%ul
+  = render :partial => 'drug', :collection => @drugs
+
+%p
+  = link_to "Add drug to the database", new_drug_path
+  %br
+  = link_to "Home", root_path

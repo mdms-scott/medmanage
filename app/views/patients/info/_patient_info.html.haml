@@ -1,11 +1,6 @@
 %ul.patient_info
   %li
-    Name:  
-    = @patient.first_name
-    = " "
-    = @patient.middle_name
-    =" "
-    = @patient.last_name
+    = "Name:  #{@patient.first_name} #{@patient.middle_name} #{@patient.last_name}"
   %li
     SSN:  
     = @patient.ssn
