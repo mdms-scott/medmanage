@@ -33,3 +33,16 @@ ul.patient_info {
     border: 1px solid black; }
     #patient_allergies table td, #patient_allergies table th {
       border: 1px solid black; }
+    #patient_allergies table td {
+      text-align: center; }
+
+/* STYLES FOR PATIENT MEDICATIONS */
+#patient_medications_container {
+  border: 1px solid black;
+  margin: 30px 0 30px 10px; }
+  #patient_medications_container table {
+    border: 1px solid black; }
+    #patient_medications_container table td, #patient_medications_container table th {
+      border: 1px solid black; }
+    #patient_medications_container table td {
+      text-align: center; }

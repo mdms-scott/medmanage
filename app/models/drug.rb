@@ -6,13 +6,15 @@ class Drug < ActiveRecord::Base
   
   serialize :interactions
   
+
+  
   def set_interaction_defaults
     self.interactions = ['']
   end
   
-  def self.types
-    @types = TYPES
-    @types
-  end
+  #def self.types
+  #  @types = TYPES
+  #  @types
+  #end
   
 end

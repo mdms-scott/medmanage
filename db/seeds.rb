@@ -24,3 +24,27 @@ patient = Patient.create!(
   :attending => 'Jacob Johnson',
   :primary => 'Jill Smith'
 )
+
+drug = Drug.create!(
+  :name => 'Penicillin',
+  :kind => 'Antibiotic',
+  :code => 'PCILLN1873',
+  :generic_for => '',
+  :purpose => 'General Purpose Antibiotic'
+)
+
+drug = Drug.create!(
+  :name => 'Ritalin',
+  :kind => 'Anti-Psychotic',
+  :code => 'RIT567',
+  :generic_for => '',
+  :purpose => 'Controlling OCD symptoms'
+)
+
+drug = Drug.create!(
+  :name => 'Atorvastatin',
+  :kind => 'Statin',
+  :code => 'AT432',
+  :generic_for => 'Lipitor',
+  :purpose => 'Cholesterol Lowering'
+)

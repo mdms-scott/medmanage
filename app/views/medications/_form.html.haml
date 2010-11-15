@@ -1,0 +1,37 @@
+= form_for @medication do |f|
+  %fieldset
+    %legend
+      Information
+    %p
+      = f.label :drug_id
+      %br
+      = f.select :drug_id, Drug.all.collect {|d| [ d.name, d.id ] }, {:prompt => 'Select Drug'}
+    %p
+      = f.label :prescription, "Prescription Code"
+      %br
+      = f.number_field :prescription
+    %p
+      = f.label :prescribing, "Prescribing Physician"
+      %br
+      = f.text_field :prescribing
+    %p
+      = f.label :dose, "Dose (in mg)"
+      %br
+      = f.number_field :dose
+    %p
+      = f.label :quantity
+      %br
+      = f.number_field :quantity
+    %p
+      = f.label :refills
+      %br
+      = f.number_field :refills
+    %p
+      = f.label :filled_on, "Last Filled on"
+      %br
+      = f.date_select :filled_on, {:use_month_numbers => true, :end_year => Time.now.year, :order => [:month, :day, :year]}
+    %p
+      = f.hidden_field :patient_id
+  %p
+    = f.submit
+      
