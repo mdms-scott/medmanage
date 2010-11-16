@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(:version => 20101115210913) do
     t.string   "code"
     t.string   "generic_for"
     t.string   "purpose"
-    t.text     "interactions"
+    t.text     "interactions", :default => "[]"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

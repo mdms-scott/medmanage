@@ -6,7 +6,7 @@ class CreateDrugs < ActiveRecord::Migration
       t.string :code
       t.string :generic_for
       t.string :purpose
-      t.text :interactions
+      t.text :interactions, :default => []
 
       t.timestamps
     end

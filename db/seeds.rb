@@ -30,7 +30,8 @@ drug = Drug.create!(
   :kind => 'Antibiotic',
   :code => 'PCILLN1873',
   :generic_for => '',
-  :purpose => 'General Purpose Antibiotic'
+  :purpose => 'General Purpose Antibiotic',
+  :interactions => ["Statin", "Anti-Fungal"]
 )
 
 drug = Drug.create!(
