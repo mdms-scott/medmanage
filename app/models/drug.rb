@@ -1,6 +1,6 @@
 class Drug < ActiveRecord::Base
   
-  TYPES = ['Antibiotic', 'Statin', 'Anti-Fungal', 'Anti-Histamine', 'Anti-Depressant', 'Sedative', 'Anti-Psychotic']
+  TYPES = ['Antibiotic', 'Statin', 'Anti-Fungal', 'Anti-Histamine', 'Anti-Depressant', 'Sedative', 'Anti-Psychotic', 'Steroid', 'Anti_Viral', 'Analgesic', 'Laxitive', 'Diuretic', 'Antacid', 'Anti-Coagulant', 'Anti-Convulsant', 'Anti-Diarrheal', 'Hormone', 'Bronchodilator', 'Decongestant', 'Heparin', 'Leprostatic', 'Nitrate', 'Muscle Relaxant', 'Vasodilator', 'Vasoconstictor']
 
   validates_presence_of :name, :kind, :code, :purpose
   validates_uniqueness_of :interactions
