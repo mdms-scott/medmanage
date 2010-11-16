@@ -1,4 +1,4 @@
-%ul.drug_info
+%ul.nostyle
   %li
     = "Name:  #{@drug.name}"
   %li
@@ -11,10 +11,10 @@
     = "Purpose:  #{@drug.purpose}"
   %li
     Interactions:
-    %ul
+    %ul.nostyle
       - @drug.interactions.each do |interaction|
         %li
-        = interaction
+          = interaction
 %p
   = link_to "Manage this drug's interactions", manage_interactions_path(@drug), :method => :post
 %p

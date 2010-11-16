@@ -12,6 +12,8 @@ class PatientsController < ApplicationController
     @drugs = @patient.drugs
     @interactions = @patient.drugs.interacts_with(@patient.drugs)
     puts @interactions
+    @allergic = @patient.drugs.allergies_to(@patient.drugs, @patient.allergies)
+    puts @allergic
     respond_with @patient
 
   end

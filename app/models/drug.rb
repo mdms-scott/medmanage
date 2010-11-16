@@ -9,20 +9,20 @@ class Drug < ActiveRecord::Base
 
   
   def set_interaction_defaults
-    self.interactions = ['']
+    self.interactions = []
   end
   
   def self.interacts_with(drugs)
-    @kinds = ['']
-    @interactions = ['']
+    kinds = []
+    @interactions = []
     drugs.each do |drug|
-      @kinds << drug.kind
+      kinds << drug.kind
     end
-    #puts @kinds
+    puts kinds
     drugs.each do |drug|
       drug.interactions.each do |interaction|
-        if @kinds.include?(interaction)
-          #puts "#{drug.name} has an interaction with another assigned prescription"
+        if kinds.include?(interaction)
+          puts "#{drug.name} has an interaction with another assigned prescription"
           @interactions << "#{drug.name} has an interaction with another assigned prescription"
         end
       end
@@ -30,6 +30,21 @@ class Drug < ActiveRecord::Base
     return @interactions
   end
   
+  def self.allergies_to(drugs, allergies)
+    allergy_kinds = []
+    @allergic = []
+    allergies.each do |allergy|
+      allergy_kinds << allergy.kind
+    end
+    puts allergy_kinds
+    drugs.each do |drug|
+      if allergy_kinds.include?(drug.kind)
+        puts "Warning!  The patient may be allergict to #{drug.name}!"
+        @allergic << "Warning!  The patient may be allergict to #{drug.name}!"
+      end
+    end
+    return @allergic
+  end
   #def self.types
   #  @types = TYPES
   #  @types
