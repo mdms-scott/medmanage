@@ -38,7 +38,7 @@ class MedicationsController < ApplicationController
   
   def destroy
     flash[:alert] = "Successfully removed prescription information." if @medication.delete
-    respond_with @medication
+    respond_with @medication, :location => patient_path(Patient.where("id = ?", @medication.patient_id).first)
   end
   
   private

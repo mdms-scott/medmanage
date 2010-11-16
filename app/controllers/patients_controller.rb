@@ -10,6 +10,8 @@ class PatientsController < ApplicationController
   
   def show
     respond_with @patient
+    #@drugs = @patient.drugs
+    #@interactions = @drugs.interacts_with
   end
   
   def new
@@ -21,7 +23,7 @@ class PatientsController < ApplicationController
     @patient = Patient.new(params[:patient])
     if @patient.save
       flash[:notice] = "Successfully created patient record."
-      respond_with @patient, :location => patients_path
+      respond_with @patient, :location => patient_path(@patient)
     else
       flash[:alert] = "Failed to create patient record."
       render :action => :new
@@ -35,7 +37,7 @@ class PatientsController < ApplicationController
   def update
     if @patient.update_attributes(params[:patient])
       flash[:notice] = "Successfully modified patient record."
-      respond_with @patient, :location => patients_path
+      respond_with @patient, :location => patient_path(@patient)
     else
       flash[:alert] = "Failed to update patient record."
       render :action => :edit

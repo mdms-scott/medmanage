@@ -1,2 +1,9 @@
 %li
-  = link_to "#{patient.last_name}", patient_path(patient)
+  %ul.patient_partial
+    %li
+      = link_to "#{patient.last_name}, #{patient.first_name} #{patient.middle_name}", patient_path(patient)
+    %li
+      = " | Patient ID:  #{patient.id}"
+    %li
+      = " | Last modified on #{patient.updated_at}"
+      

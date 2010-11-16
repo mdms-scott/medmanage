@@ -25,6 +25,16 @@ ul.patient_info {
   margin: 0px;
   padding: 0px; }
 
+ul.nostyle {
+  list-style: none; }
+
+ul.patient_partial {
+  list-style: none;
+  margin: 0px;
+  padding: 0px; }
+  ul.patient_partial li {
+    display: inline; }
+
 /* STYLES FOR PATIENT ALLERGIES */
 #patient_allergies {
   border: 1px solid black;

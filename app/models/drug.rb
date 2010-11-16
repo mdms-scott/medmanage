@@ -12,6 +12,24 @@ class Drug < ActiveRecord::Base
     self.interactions = ['']
   end
   
+  def self.interacts_with(drugs)
+    @kinds = ['']
+    drugs.each do |drug|
+      @kinds << drug.kind
+      puts @kinds
+    end
+    drugs.each do |drug|
+      drug.interactions.each do |interaction|
+        if @kinds.include?(interaction)
+          puts 'there are interactions'
+        else
+          puts 'there are no interactions'
+        end
+      end
+    end
+    return 'poo'
+  end
+  
   #def self.types
   #  @types = TYPES
   #  @types
