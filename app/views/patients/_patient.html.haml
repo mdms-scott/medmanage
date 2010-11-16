@@ -1,9 +1,7 @@
-%li
-  %ul.nostyle.nomargin.inline
-    %li
-      = link_to "#{patient.last_name}, #{patient.first_name} #{patient.middle_name}", patient_path(patient)
-    %li
-      = " | Patient ID:  #{patient.id}"
-    %li
-      = " | Last modified on #{patient.updated_at}"
-      
+%tr
+  %td
+    = link_to "#{patient.last_name}, #{patient.first_name} #{patient.middle_name}", patient_path(patient)
+  %td
+    = patient.id
+  %td
+    = patient.updated_at

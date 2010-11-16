@@ -1,7 +1,14 @@
 %h3
   Patients Index
 
-%ul.nostyle.nomargin
+%table
+  %tr
+    %th
+      Name
+    %th
+      Patient ID
+    %th
+      Last Modified On
   = render :partial => 'patient', :collection => @patients
 
 %p

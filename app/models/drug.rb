@@ -13,11 +13,11 @@ class Drug < ActiveRecord::Base
     drugs.each do |drug|
       kinds << drug.kind
     end
-    puts kinds
+    #puts kinds
     drugs.each do |drug|
       drug.interactions.each do |interaction|
         if kinds.include?(interaction)
-          puts "#{drug.name} has an interaction with another assigned prescription"
+          #puts "#{drug.name} has an interaction with another assigned prescription"
           @interactions << "#{drug.name} has an interaction with another assigned prescription"
         end
       end
@@ -31,10 +31,10 @@ class Drug < ActiveRecord::Base
     allergies.each do |allergy|
       allergy_kinds << allergy.kind
     end
-    puts allergy_kinds
+    #puts allergy_kinds
     drugs.each do |drug|
       if allergy_kinds.include?(drug.kind)
-        puts "Warning!  The patient may be allergict to #{drug.name}!"
+        #puts "Warning!  The patient may be allergict to #{drug.name}!"
         @allergic << "Warning!  The patient may be allergict to #{drug.name}!"
       end
     end
