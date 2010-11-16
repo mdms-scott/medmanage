@@ -3,3 +3,14 @@ README - MEDMANAGE
 This is a fairly basic medication and prescription management program written in rails.  It is, quite obviously, not intended for professional use, but it is totally open source so if you see something you like here (somehow), feel free to use it, or just to look it over to see how it was done.  Tackling the managing of drug interactions, as well as the notification that two prescriptions may interact, or that the patient may have an allergy to their medication were probably the most interesting parts.
 
 The app is available for viewing on Heroku, just look to the link above.
+
+THE PATIENTS INDEX
+  The patient's index is where patient records are listed.  Just click on the link on the home index to be taken there.  A list of patients, along with their ID numbers and date and time of most recent modification are listed.  One can either create a new patient record, or select a patient from the list.
+  Once a patient has been selected that patient's information is displayed for viewing.  In the first area the patients personal information is listed.  Below that is the patients allergy information.  To add allergy records to a patient simply click the add allergy link, give the allergy a name (say to a particular type of drug), then select the type of allergy it is (the type selection is made up of the types of drugs available, as allergies to, say, pet dander are less relevant in prescription management).
+  In the next area the patients prescriptions are listed.  Shown are the drug prescribed, the prescription code, the prescribing physician, the dosage, the quantity of pills in a bottle, the number of refills remaining, and the date the prescription was last filled on.
+  Below this are two sections for warnings to appear in.  The first, surrounded by a green border, alerts the pharmacist to the presence of potential allergies.  The second, surrounded by a red border, alerts the pharmacist of potential interactions between prescribed drugs.  Both of these warning areas will only appear if a conflict is found.
+  
+THE DRUG INDEX
+  The drug index is, of course, the list of all drugs available to the pharmacy.  More drugs can be added through the add drug link, or individual drugs can be viewed.  When viewed one can see the drug's name, its pharmacy code, its type (or classification), what drug, if any, it is a generic for, its purpose, and a list of drug types that it has interactions with.  Upon creating a new drug the list of interactions will be empty, and by clicking the manage interactions link one is able to add,  modify, or remove them.
+  
+  This pretty much covers the application.  Of course in practice, seeing as it has patient records, it would be behind security and user authentication, and of course the systems for examining interactions could be more robust, however I'm quite proud that I was able to knock it out in about a day without having to look anything up aside from a bit of syntax.
