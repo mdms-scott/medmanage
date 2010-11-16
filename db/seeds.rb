@@ -1,51 +1,59 @@
+class Time
+  def self.random(scale)
+    year = Time.now.year - rand(scale)
+    month = rand(12) + 1
+    day = rand(31) + 1
+    Time.local(year, month, day)
+  end
+end
 
-Patient.destroy_all
 
-patient = Patient.create!(
-  :last_name => 'Fredrickson',
-  :first_name => 'Fred',
-  :middle_name => 'Freddy',
-  :dob => '1964-11-14',
-  :ssn => '123456789',
-  :sex => 'Male',
-  :insurance => 'Blue Cross & Blue Shield',
-  :attending => 'Jacob Johnson',
-  :primary => 'James Brown'
-)
+10.times do
+  Patient.create!(
+    :last_name => Faker::Name.last_name,
+    :first_name => Faker::Name.first_name,
+    :middle_name => Faker::Name.first_name,
+    :dob => Time.random(80),
+    :ssn => 100000000 + rand(1000000000 - 100000000),
+    :sex => Patient::SEX.rand,
+    :insurance => Faker::Company.name,
+    :attending => Faker::Name.name,
+    :primary => Faker::Name.name
+  )
+end
 
-patient = Patient.create!(
-  :last_name => 'Smith',
-  :first_name => 'Sarah',
-  :middle_name => 'Jane',
-  :dob => '1978-03-27',
-  :ssn => '987654321',
-  :sex => 'Female',
-  :insurance => 'Blue Cross & Blue Shield',
-  :attending => 'Jacob Johnson',
-  :primary => 'Jill Smith'
-)
+Patient.all.each do |patient|
+  rand(3).times do
+    Allergy.create!(
+      :name => Faker::Lorem.words(1).join(' '),
+      :kind => Drug::TYPES.rand,
+      :patient => patient
+    )
+  end
+end
 
-drug = Drug.create!(
-  :name => 'Penicillin',
-  :kind => 'Antibiotic',
-  :code => 'PCILLN1873',
-  :generic_for => '',
-  :purpose => 'General Purpose Antibiotic',
-  :interactions => ["Statin", "Anti-Fungal"]
-)
+15.times do
+  Drug.create!(
+    :name => Faker::Lorem.words(2).join(' '),
+    :kind => Drug::TYPES.rand,
+    :code => 1000 + rand(99999),
+    :generic_for => Faker::Lorem.words(2).join(' '),
+    :purpose => Faker::Lorem.words(5).join(' '),
+    :interactions => [Drug::TYPES.rand, Drug::TYPES.rand, Drug::TYPES.rand]
+  )
+end
 
-drug = Drug.create!(
-  :name => 'Ritalin',
-  :kind => 'Anti-Psychotic',
-  :code => 'RIT567',
-  :generic_for => '',
-  :purpose => 'Controlling OCD symptoms'
-)
-
-drug = Drug.create!(
-  :name => 'Atorvastatin',
-  :kind => 'Statin',
-  :code => 'AT432',
-  :generic_for => 'Lipitor',
-  :purpose => 'Cholesterol Lowering'
-)
+Patient.all.each do |patient|
+  rand(5).times do
+    Medication.create!(
+    :patient => patient,
+    :drug => Drug.all.rand,
+    :prescribing => Faker::Name.name,
+    :prescription => 87236 + rand(92837498),
+    :dose => 5 + rand(100 - 5) + 1,
+    :quantity => rand(50) + 1,
+    :filled_on => Time.random(5),
+    :refills => rand(5)
+    )
+  end
+end

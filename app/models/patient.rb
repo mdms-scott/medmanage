@@ -6,4 +6,7 @@ class Patient < ActiveRecord::Base
   has_many :medications, :dependent => :destroy
   has_many :drugs, :through => :medications
   
+  validates_presence_of :last_name, :first_name, :dob, :sex, :ssn, :insurance, :primary
+  validates_uniqueness_of :ssn
+  
 end

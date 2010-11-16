@@ -1,6 +1,9 @@
 class Drug < ActiveRecord::Base
   
   TYPES = ['Antibiotic', 'Statin', 'Anti-Fungal', 'Anti-Histamine', 'Anti-Depressant', 'Sedative', 'Anti-Psychotic']
+
+  validates_presence_of :name, :kind, :code, :purpose
+  validates_uniqueness_of :interactions
   
   serialize :interactions
   
