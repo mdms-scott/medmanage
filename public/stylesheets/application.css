@@ -66,3 +66,12 @@ ul.patient_partial {
   padding: 5px;
   border: 3px solid red;
   background-color: #eeeeee; }
+
+#allergic_reactions {
+  font-size: 18px;
+  font-family: helvetica;
+  text-align: center;
+  margin: 30px 0 30px 10px;
+  padding: 5px;
+  border: 3px solid lime;
+  background-color: #eeeeee; }

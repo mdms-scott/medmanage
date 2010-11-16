@@ -9,3 +9,5 @@
         = check_box_tag "drug[interactions][]", type, @drug.interactions.include?(type)
     %p
       = submit_tag
+      = "/"
+      %a.cancel_link{ :href => drug_path(@drug) } Cancel

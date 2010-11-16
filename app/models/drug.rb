@@ -45,9 +45,5 @@ class Drug < ActiveRecord::Base
     end
     return @allergic
   end
-  #def self.types
-  #  @types = TYPES
-  #  @types
-  #end
   
 end
