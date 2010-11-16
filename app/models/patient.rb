@@ -9,4 +9,6 @@ class Patient < ActiveRecord::Base
   validates_presence_of :last_name, :first_name, :dob, :sex, :ssn, :insurance, :primary
   validates_uniqueness_of :ssn
   
+  # topup
+  
 end
