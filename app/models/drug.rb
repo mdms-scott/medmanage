@@ -34,8 +34,8 @@ class Drug < ActiveRecord::Base
     #puts allergy_kinds
     drugs.each do |drug|
       if allergy_kinds.include?(drug.kind)
-        #puts "Warning!  The patient may be allergict to #{drug.name}!"
-        @allergic << "Warning!  The patient may be allergict to #{drug.name}!"
+        #puts "Warning!  The patient may be allergic to #{drug.name}!"
+        @allergic << "Warning!  The patient may be allergic to #{drug.name}!"
       end
     end
     return @allergic

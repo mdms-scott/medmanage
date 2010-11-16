@@ -19,7 +19,7 @@
   - @patient.medications.each do |medication|
     %tr
       %td
-        = medication.drug.name
+        = link_to "#{medication.drug.name}", drug_path(medication.drug)
       %td
         = medication.prescription
       %td
