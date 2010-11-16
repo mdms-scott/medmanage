@@ -47,3 +47,10 @@ table {
 #form_right {
   float: left;
   margin-left: 20px; }
+
+/* FLASH MESSAGES */
+#flash_inner {
+  text-align: center;
+  position: relative;
+  margin: 10 auto;
+  color: red; }

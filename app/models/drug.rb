@@ -18,7 +18,7 @@ class Drug < ActiveRecord::Base
       drug.interactions.each do |interaction|
         if kinds.include?(interaction)
           #puts "#{drug.name} has an interaction with another assigned prescription"
-          @interactions << "#{drug.name} has an interaction with another assigned prescription"
+          @interactions << "Warning!  #{drug.name} may have an interaction with another assigned prescription!"
         end
       end
     end

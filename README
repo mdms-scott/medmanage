@@ -1,1 +1,5 @@
-Readme
+README - MEDMANAGE
+
+This is a fairly basic medication and prescription management program written in rails.  It is, quite obviously, not intended for professional use, but it is totally open source so if you see something you like here (somehow), feel free to use it, or just to look it over to see how it was done.  Tackling the managing of drug interactions, as well as the notification that two prescriptions may interact, or that the patient may have an allergy to their medication were probably the most interesting parts.
+
+The app is available for viewing on Heroku, just look to the link above.
