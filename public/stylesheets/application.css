@@ -56,3 +56,7 @@ ul.patient_partial {
       border: 1px solid black; }
     #patient_medications_container table td {
       text-align: center; }
+
+/* STYLES FOR INTERACTIONS */
+#drug_interactions {
+  border: 1px solid black; }

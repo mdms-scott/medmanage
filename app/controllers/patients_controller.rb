@@ -9,9 +9,11 @@ class PatientsController < ApplicationController
   end
   
   def show
+    @drugs = @patient.drugs
+    @interactions = @patient.drugs.interacts_with(@patient.drugs)
+    puts @interactions
     respond_with @patient
-    #@drugs = @patient.drugs
-    #@interactions = @drugs.interacts_with
+
   end
   
   def new
