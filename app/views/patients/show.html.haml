@@ -1,19 +1,19 @@
 %h3
   = "Viewing Patient #{@patient.first_name}'s Information"
 
-#patient_info_container
+#container
   = render :partial => '/patients/info/patient_info'
-#patient_allergies
+#container
   = render :partial => '/patients/info/patient_allergies'
-#patient_medications_container
+#container
   = render :partial => '/patients/info/patient_medications'
 - if @allergic.empty?
 -else
-  #allergic_reactions
+  #container.alert.allergies
     = render :partial => 'patients/info/allergic_reactions'
 - if @interactions.empty?
 - else
-  #drug_interactions
+  #container.alert.interactions
     = render :partial => '/patients/info/drug_interactions'
 
 

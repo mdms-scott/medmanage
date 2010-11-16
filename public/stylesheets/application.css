@@ -7,6 +7,39 @@
   width: 0;
   height: 0; }
 
+#main_container {
+  width: 900px;
+  margin: 0 auto; }
+
+#container {
+  border: 1px solid black;
+  margin: 30px 0 30px 10px; }
+  #container.alert {
+    font-size: 18px;
+    font-family: helvetica;
+    text-align: center;
+    padding: 5px;
+    background-color: #eeeeee; }
+    #container.alert.interactions {
+      border: 3px solid red; }
+    #container.alert.allergies {
+      border: 3px solid lime; }
+
+ul.nostyle {
+  list-style: none; }
+  ul.nostyle.nomargin {
+    margin: 0px;
+    padding: 0px; }
+    ul.nostyle.nomargin.inline li {
+      display: inline; }
+
+table {
+  border: 1px solid black; }
+  table td, table th {
+    border: 1px solid black; }
+  table td {
+    text-align: center; }
+
 /* FORMS */
 #form_left {
   float: left; }
@@ -14,64 +47,3 @@
 #form_right {
   float: left;
   margin-left: 20px; }
-
-/* STYLES FOR PATIENT INFORMATION */
-#patient_info_container {
-  border: 1px solid black;
-  margin: 30px 0 30px 10px; }
-
-ul.patient_info {
-  list-style: none;
-  margin: 0px;
-  padding: 0px; }
-
-ul.nostyle {
-  list-style: none; }
-
-ul.patient_partial {
-  list-style: none;
-  margin: 0px;
-  padding: 0px; }
-  ul.patient_partial li {
-    display: inline; }
-
-/* STYLES FOR PATIENT ALLERGIES */
-#patient_allergies {
-  border: 1px solid black;
-  margin: 30px 0 30px 10px; }
-  #patient_allergies table {
-    border: 1px solid black; }
-    #patient_allergies table td, #patient_allergies table th {
-      border: 1px solid black; }
-    #patient_allergies table td {
-      text-align: center; }
-
-/* STYLES FOR PATIENT MEDICATIONS */
-#patient_medications_container {
-  border: 1px solid black;
-  margin: 30px 0 30px 10px; }
-  #patient_medications_container table {
-    border: 1px solid black; }
-    #patient_medications_container table td, #patient_medications_container table th {
-      border: 1px solid black; }
-    #patient_medications_container table td {
-      text-align: center; }
-
-/* STYLES FOR INTERACTIONS */
-#drug_interactions {
-  font-size: 18px;
-  font-family: helvetica;
-  text-align: center;
-  margin: 30px 0 30px 10px;
-  padding: 5px;
-  border: 3px solid red;
-  background-color: #eeeeee; }
-
-#allergic_reactions {
-  font-size: 18px;
-  font-family: helvetica;
-  text-align: center;
-  margin: 30px 0 30px 10px;
-  padding: 5px;
-  border: 3px solid lime;
-  background-color: #eeeeee; }
